@@ -10,11 +10,6 @@
    김재원
    홍영현
 
-3. 사용 언어
-
-   PHP
-   MySQL
-
 #JEIU Survey Maker
 
 1. Overview
@@ -27,7 +22,3 @@
    Kim Jae Won
    Hong Young-hyun
 
-3. Use Language
-   
-   PHP
-   MySQL

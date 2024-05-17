@@ -54,10 +54,10 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.view_user').click(function(){
-		uni_modal("<i class='fa fa-id-card'></i> User Details","view_user.php?id="+$(this).attr('data-id'))
+		uni_modal("<i class='fa fa-id-card'></i> 유저 상세정보","view_user.php?id="+$(this).attr('data-id'))
 	})
 	$('.delete_user').click(function(){
-	_conf("Are you sure to delete this user?","delete_user",[$(this).attr('data-id')])
+	_conf("진심으로 이 유저를 삭제하실겁니까?","delete_user",[$(this).attr('data-id')])
 	})
 	})
 	function delete_user($id){
@@ -68,7 +68,7 @@
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("삭제 완료",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

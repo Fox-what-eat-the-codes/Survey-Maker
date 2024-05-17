@@ -10,7 +10,7 @@ while($row=$answers->fetch_assoc()){
 	<div class="d-flex w-100 justify-content-center align-items-center mb-2">
 		<label for="" class="control-label">설문 찾기</label>
 		<div class="input-group input-group-sm col-sm-5">
-          <input type="text" class="form-control" id="filter" placeholder="Enter keyword...">
+          <input type="text" class="form-control" id="filter" placeholder="키워드 입력하기...">
           <span class="input-group-append">
             <button type="button" class="btn btn-primary btn-flat" id="search">검색하기</button>
           </span>

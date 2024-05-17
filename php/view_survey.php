@@ -78,7 +78,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 								<?php endforeach; ?>
 						<?php else: ?>
 							<div class="form-group">
-								<textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..."></textarea>
+								<textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="아무거나 작성해주십시오..."></textarea>
 							</div>
 						<?php endif; ?>
 						</div>	
@@ -110,14 +110,14 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		})
 	})
 	$('.new_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>","large")
+		uni_modal("새로운 질문","manage_question.php?sid=<?php echo $id ?>","large")
 	})
 	$('.edit_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
+		uni_modal("새로운 질문","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
 	})
 	
 	$('.delete_question').click(function(){
-	_conf("Are you sure to delete this question?","delete_question",[$(this).attr('data-id')])
+	_conf("진심으로 이 질문을 삭제하실겁니까?","delete_question",[$(this).attr('data-id')])
 	})
 	function delete_question($id){
 		start_load()

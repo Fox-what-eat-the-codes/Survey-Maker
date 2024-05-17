@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<b class="text-muted">시스템적 자격</b>
+						<b class="text-muted">시스템 역할</b>
 						<?php if($_SESSION['login_type'] == 1): ?>
 						<div class="form-group">
 							<label for="" class="control-label">계정 역할</label>

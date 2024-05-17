@@ -58,7 +58,7 @@ while($row=$answers->fetch_assoc()){
 				<div class="card-header">
 					<h3 class="card-title"><b>설문 통계</b></h3>
 					<div class="card-tools">
-						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> Print</button>
+						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> 프린트하기</button>
 					</div>
 				</div>
 				<div class="card-body ui-sortable">

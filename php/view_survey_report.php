@@ -45,7 +45,7 @@ while($row=$answers->fetch_assoc()){
 						<small><?php echo $description; ?></small>
 						<p>시작일: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
 						<p>마감일: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($taken) ?></b></p>
+						<p>설문 한 사람: <b><?php echo number_format($taken) ?></b></p>
 
 
 					</div>
@@ -123,7 +123,7 @@ while($row=$answers->fetch_assoc()){
 			data:$(this).serialize(),
 			success:function(resp){
 				if(resp == 1){
-					alert_toast("Thank You.",'success')
+					alert_toast("감사합니다.",'success')
 					setTimeout(function(){
 						location.href = 'index.php?page=survey_widget'
 					},2000)

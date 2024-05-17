@@ -32,6 +32,35 @@
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-poll-h"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">진행중인 설문수</span>
+                 <span class="info-box-number">
+                  <?php echo $conn->query("SELECT * FROM survey_set WHERE end_date > now()")->num_rows; ?>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-poll-h"></i></span>
+          <div class="info-box-content">
+                <span class="info-box-text">끝난 설문수</span>
+                 <span class="info-box-number">
+                  <?php echo $conn->query("SELECT * FROM survey_set WHERE end_date < now()")->num_rows; ?>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
       </div>
 
 <?php else: ?>

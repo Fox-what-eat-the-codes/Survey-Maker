@@ -6,7 +6,7 @@
 
       </a>
       <div class="dropdown-menu" style="">
-        <a class="dropdown-item manage_account" href="javascript:void(0)" data-id="<?php echo $_SESSION['login_id'] ?>">Manage Account</a>
+        <a class="dropdown-item manage_account" href="javascript:void(0)" data-id="<?php echo $_SESSION['login_id'] ?>">계정 관리</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="ajax.php?action=logout">Logout</a>
       </div>

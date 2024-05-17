@@ -12,10 +12,6 @@
 							<input type="text" name="firstname" class="form-control form-control-sm" required value="<?php echo isset($firstname) ? $firstname : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Middle Name</label>
-							<input type="text" name="middlename" class="form-control form-control-sm"  value="<?php echo isset($middlename) ? $middlename : '' ?>">
-						</div>
-						<div class="form-group">
 							<label for="" class="control-label">이름</labe	l>
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
 						</div>

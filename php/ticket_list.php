@@ -31,7 +31,7 @@
 						$where .= " where t.department_id = {$_SESSION['login_department_id']} ";
 					if($_SESSION['login_type'] == 3)
 						$where .= " where t.customer_id = {$_SESSION['login_id']} ";
-					$qry = $conn->query("SELECT t.*,concat(c.lastname,', ',c.firstname,' ',c.middlename) as cname FROM tickets t inner join customers c on c.id= t.customer_id $where order by unix_timestamp(t.date_created) desc");
+					$qry = $conn->query("SELECT t.*,concat(c.lastname,', ',c.firstname) as cname FROM tickets t inner join customers c on c.id= t.customer_id $where order by unix_timestamp(t.date_created) desc");
 					while($row= $qry->fetch_assoc()):
 						$trans = get_html_translation_table(HTML_ENTITIES,ENT_QUOTES);
 						unset($trans["\""], $trans["<"], $trans[">"], $trans["<h2"]);

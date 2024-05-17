@@ -20,10 +20,6 @@ foreach($user->fetch_array() as $k =>$v){
 			<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
 		</div>
 		<div class="form-group">
-			<label for="name">Middle Name</label>
-			<input type="text" name="middlename" id="middlename" class="form-control" value="<?php echo isset($meta['middlename']) ? $meta['middlename']: '' ?>">
-		</div>
-		<div class="form-group">
 			<label for="name">성씨</label>
 			<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
 		</div>

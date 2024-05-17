@@ -35,16 +35,16 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Details</b></h3>
+					<h3 class="card-title"><b>설문 상세정보</b></h3>
 					
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
-						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Description:</p>
+						<p>제목: <b><?php echo $stitle ?></b></p>
+						<p class="mb-0">설명</p>
 						<small><?php echo $description; ?></small>
-						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>시작일: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>마감일: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
 						<p>Have Taken: <b><?php echo number_format($taken) ?></b></p>
 
 
@@ -56,7 +56,7 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Report</b></h3>
+					<h3 class="card-title"><b>설문 통계</b></h3>
 					<div class="card-tools">
 						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> Print</button>
 					</div>

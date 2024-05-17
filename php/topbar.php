@@ -6,7 +6,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li>
-        <a class="nav-link text-white"  href="./" role="button"> <large><b>Online Survey System</b></large></a>
+        <a class="nav-link text-white"  href="./" role="button"> <large><b>온라인 설문조사 시스템</b></large></a>
       </li>
     </ul>
 

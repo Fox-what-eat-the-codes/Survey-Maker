@@ -11,11 +11,11 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Name</th>
-						<th>Contact #</th>
-						<th>Role</th>
-						<th>Email</th>
-						<th>Action</th>
+						<th>이름</th>
+						<th>연락처</th>
+						<th>역할</th>
+						<th>이메일</th>
+						<th>기능</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -33,7 +33,7 @@
 						<td><b><?php echo $row['email'] ?></b></td>
 						<td class="text-center">
 							<button type="button" class="btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-		                      Action
+		                      기능
 		                    </button>
 		                    <div class="dropdown-menu" style="">
 		                      <a class="dropdown-item view_user" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">View</a>

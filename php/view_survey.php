@@ -13,16 +13,16 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title">Survey Details</h3>
+					<h3 class="card-title">설문 상세정보</h3>
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
-						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Description:</p>
+						<p>제목: <b><?php echo $stitle ?></b></p>
+						<p class="mb-0">설명:</p>
 						<small><?php echo $description; ?></small>
-						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($answers) ?></b></p>
+						<p>시작일: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>마감일: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>설문 한 사람: <b><?php echo number_format($answers) ?></b></p>
 
 					</div>
 					<hr class="border-primary">
@@ -32,9 +32,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>설문 질문들</b></h3>
 					<div class="card-tools">
-						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> Add New Question</button>
+						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> 새로운 질문 추가하기</button>
 					</div>
 				</div>
 				<form action="" id="manage-sort">
@@ -49,9 +49,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 								<span class="dropleft float-right">
 									<a class="fa fa-ellipsis-v text-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 									<div class="dropdown-menu" style="">
-								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Edit</a>
+								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">편집</a>
 								        <div class="dropdown-divider"></div>
-								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">삭제</a>
 								     </div>
 								</span>	
 							</div>	
@@ -95,14 +95,14 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		$('.ui-sortable').sortable({
 			placeholder: "ui-state-highlight",
 			 update: function( ) {
-			 	alert_toast("Saving question sort order.","info")
+			 	alert_toast("질문들 저장중...","info")
 		        $.ajax({
 		        	url:"ajax.php?action=action_update_qsort",
 		        	method:'POST',
 		        	data:$('#manage-sort').serialize(),
 		        	success:function(resp){
 		        		if(resp == 1){
-			 				alert_toast("Question order sort successfully saved.","success")
+			 				alert_toast("질문들 저장 완료!","success")
 		        		}
 		        	}
 		        })
@@ -127,7 +127,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 			data:{id:$id},
 			success:function(resp){
 				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+					alert_toast("삭제 완료.",'success')
 					setTimeout(function(){
 						location.reload()
 					},1500)

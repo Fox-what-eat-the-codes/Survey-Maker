@@ -11,29 +11,29 @@ foreach($qry as $k => $v){
 <div class="container-fluid">
 	<table class="table">
 		<tr>
-			<th>Name:</th>
+			<th>이름:</th>
 			<td><b><?php echo ucwords($name) ?></b></td>
 		</tr>
 		<tr>
-			<th>Email:</th>
+			<th>이메일:</th>
 			<td><b><?php echo $email ?></b></td>
 		</tr>
 		<tr>
-			<th>Contact:</th>
+			<th>연락처:</th>
 			<td><b><?php echo $contact ?></b></td>
 		</tr>
 		<tr>
-			<th>Address:</th>
+			<th>주소</th>
 			<td><b><?php echo $address ?></b></td>
 		</tr>
 		<tr>
-			<th>User Role:</th>
+			<th>유저 역할:</th>
 			<td><b><?php echo $type_arr[$type] ?></b></td>
 		</tr>
 	</table>
 </div>
 <div class="modal-footer display p-0 m-0">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
 </div>
 <style>
 	#uni_modal .modal-footer{

@@ -46,7 +46,7 @@
 						<div class="form-group">
 							<label class="control-label">비밀번호</label>
 							<input type="password" class="form-control form-control-sm" name="password" <?php echo isset($id) ? "":'required' ?>>
-							<small><i><?php echo isset($id) ? "Leave this blank if you dont want to change you password":'' ?></i></small>
+							<small><i><?php echo isset($id) ? "비밀번호 변경을 원치 않을 경우엔 비워주세요":'' ?></i></small>
 						</div>
 						<div class="form-group">
 							<label class="label control-label">비밀번호 확인</label>

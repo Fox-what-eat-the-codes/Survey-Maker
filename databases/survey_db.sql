@@ -110,7 +110,6 @@ CREATE TABLE `users` (
   `id` int(30) NOT NULL,
   `firstname` varchar(200) NOT NULL,
   `lastname` varchar(200) NOT NULL,
-  `middlename` varchar(200) NOT NULL,
   `contact` varchar(100) NOT NULL,
   `address` text NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -123,11 +122,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `middlename`, `contact`, `address`, `email`, `password`, `type`, `date_created`) VALUES
-(1, 'Admin', 'Admin', '', '+123456789', 'Sample address', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2020-11-10 08:43:06'),
-(2, 'John', 'Smith', 'D', '8747808787', 'Sample Address', 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 3, '2020-11-10 09:16:53'),
-(3, 'Claire', 'Blake', 'D', '+6948 8542 623', 'Sample Address', 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', 3, '2020-11-10 15:59:11'),
-(4, 'Mike', 'Williams', 'G', '8747808787', 'Sample', 'mwilliams@sample.com', '3cc93e9a6741d8b40460457139cf8ced', 3, '2020-11-10 16:21:02');
+INSERT INTO `users` (`id`, `firstname`, `lastname`,`contact`, `address`, `email`, `password`, `type`, `date_created`) VALUES
+(1, 'Admin', '', '+123456789', 'Sample address', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2020-11-10 08:43:06'),
+(2, 'John','D', '8747808787', 'Sample Address', 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 3, '2020-11-10 09:16:53'),
+(3, 'Claire', 'D', '+6948 8542 623', 'Sample Address', 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', 3, '2020-11-10 15:59:11'),
+(4, 'Mike', 'G', '8747808787', 'Sample', 'mwilliams@sample.com', '3cc93e9a6741d8b40460457139cf8ced', 3, '2020-11-10 16:21:02');
 
 --
 -- Indexes for dumped tables

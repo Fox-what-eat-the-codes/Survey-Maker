@@ -42,17 +42,17 @@ header("location:index.php?page=home");
   <main id="main" >
   	
   		<div class="align-self-center w-100">
-		<h4 class="text-white text-center"><b>Online Survey System</b></h4>
+		<h4 class="text-white text-center"><b>온라인 설문 시스템</b></h4>
   		<div id="login-center" class="bg-dark row justify-content-center">
   			<div class="card col-md-4">
   				<div class="card-body">
   					<form id="login-form" >
   						<div class="form-group">
-  							<label for="email" class="control-label text-dark">Email</label>
+  							<label for="email" class="control-label text-dark">이메일</label>
   							<input type="text" id="email" name="email" class="form-control form-control-sm">
   						</div>
   						<div class="form-group">
-  							<label for="password" class="control-label text-dark">Password</label>
+  							<label for="password" class="control-label text-dark">비밀번호</label>
   							<input type="password" id="password" name="password" class="form-control form-control-sm">
   						</div>
   						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">로그인</button></center>
@@ -70,7 +70,7 @@ header("location:index.php?page=home");
 <script>
 	$('#login-form').submit(function(e){
 		e.preventDefault()
-		$('#login-form button[type="button"]').attr('disabled',true).html('Logging in...');
+		$('#login-form button[type="button"]').attr('disabled',true).html('로그인 중...');
 		if($(this).find('.alert-danger').length > 0 )
 			$(this).find('.alert-danger').remove();
 		$.ajax({
@@ -86,7 +86,7 @@ header("location:index.php?page=home");
 				if(resp == 1){
 					location.href ='index.php?page=home';
 				}else{
-					$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>')
+					$('#login-form').prepend('<div class="alert alert-danger">이메일이나 비밀번호가 맞지 않습니다</div>')
 					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
 				}
 			}

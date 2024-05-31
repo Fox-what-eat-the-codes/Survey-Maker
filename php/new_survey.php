@@ -55,7 +55,7 @@ if(!isset($conn)){
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved.',"success");
+					alert_toast('성공적으로 저장 완료!',"success");
 					setTimeout(function(){
 						location.replace('index.php?page=survey_list')
 					},1500)

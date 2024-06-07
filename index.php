@@ -107,7 +107,7 @@
   <!-- Main Footer -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline-block">
-      <b>온라인 설문 시스템</b>
+      <img class="jeiu_logo" style='width: 100px;' src="../survey/assets/dist/img/main_logo.png" alt="재능대 설문 시스템">
     </div>
   </footer>
 </div>

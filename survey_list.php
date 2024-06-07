@@ -7,6 +7,16 @@
 			</div>
 		</div>
 		<div class="card-body">
+			<!-- 드롭다운 메뉴 추가 -->
+			<div class="form-group">
+				<label for="survey_filter">Filter Surveys:</label>
+				<select id="survey_filter" class="form-control">
+					<option value="survey_list" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php' && $_GET['page'] == 'survey_list') ? 'selected' : ''; ?>>전체 설문</option>
+					<option value="ongoing_surveys" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php' && $_GET['page'] == 'ongoing_surveys') ? 'selected' : ''; ?>>진행중인 설문</option>
+					<option value="complete_surveys" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php' && $_GET['page'] == 'complete_surveys') ? 'selected' : ''; ?>>끝난 설문</option>
+				</select>
+			</div>
+
 			<table class="table tabe-hover table-bordered" id="list">
 				<colgroup>
 					<col width="5%">
@@ -69,6 +79,16 @@
 <script>
 	$(document).ready(function(){
 		$('#list').dataTable()
+		document.getElementById('survey_filter').addEventListener('change', function() {
+        var filterPage = this.value;
+        window.location.href = 'index.php?page=' + filterPage;
+		});
+
+		// 드롭다운 메뉴가 화면 상단에 위치하도록 스크롤
+		document.addEventListener('DOMContentLoaded', function() {
+			window.scrollTo(0, document.getElementById('survey_filter').offsetTop);
+		});
+
 	$('.delete_survey').click(function(){
 	_conf("진짜로 설문을 삭제하시겠습니까?","delete_survey",[$(this).attr('data-id')])
 	})

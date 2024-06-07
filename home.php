@@ -18,7 +18,7 @@
             </div>
             <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
+            <div class="info-box mb-3" id="ongoing_survey_link">
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-poll-h"></i></span>
 
               <div class="info-box-content">
@@ -33,7 +33,7 @@
           </div>
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
+            <div class="info-box mb-3" id="completed_survey_link">
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-poll-h"></i></span>
           <div class="info-box-content">
                 <span class="info-box-text">끝난 설문수</span>
@@ -80,4 +80,13 @@
     document.getElementById('survey_list_link').addEventListener('click', function() {
         window.location.href = 'index.php?page=survey_list';
     });
+
+    document.getElementById('ongoing_survey_link').addEventListener('click', function() {
+    window.location.href = 'index.php?page=ongoing_surveys';
+    });
+
+    document.getElementById('completed_survey_link').addEventListener('click', function() {
+      window.location.href = 'index.php?page=complete_surveys';
+    });
+
 </script>

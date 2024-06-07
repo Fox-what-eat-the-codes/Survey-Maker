@@ -35,19 +35,17 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>설문 상세정보</b></h3>
+					<h3 class="card-title"><b>Survey Details</b></h3>
 					
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
-						<p>제목: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">설명</p>
+						<p>Title: <b><?php echo $stitle ?></b></p>
+						<p class="mb-0">Description:</p>
 						<small><?php echo $description; ?></small>
-						<p>시작일: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>마감일: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>설문 한 사람: <b><?php echo number_format($taken) ?></b></p>
-
-
+						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>Have Taken: <b><?php echo number_format($taken) ?></b></p>
 					</div>
 					<hr class="border-primary">
 				</div>
@@ -56,15 +54,16 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>설문 통계</b></h3>
+					<h3 class="card-title"><b>Survey Report</b></h3>
 					<div class="card-tools">
-						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> 프린트하기</button>
+						<button class="btn btn-flat btn-sm bg-gradient-success" type="button" id="print"><i class="fa fa-print"></i> Print</button>
 					</div>
 				</div>
 				<div class="card-body ui-sortable">
 					<?php 
-					$question = $conn->query("SELECT * FROM questions where survey_id = $id order by abs(order_by) asc,abs(id) asc");
-					while($row=$question->fetch_assoc()):	
+					if ($taken > 0): // 설문 응답자가 있는 경우에만 결과를 표시
+						$question = $conn->query("SELECT * FROM questions where survey_id = $id order by abs(order_by) asc,abs(id) asc");
+						while($row=$question->fetch_assoc()):	
 					?>
 					<div class="callout callout-info">
 						<h5><?php echo $row['question'] ?></h5>	
@@ -84,7 +83,7 @@ while($row=$answers->fetch_assoc()){
 									</div>
 									<div class="d-flex w-100">
 									<span class=""><?php echo isset($ans[$row['id']][$k]) ? count($ans[$row['id']][$k]) : 0 ?>/<?php echo $taken ?></span>
-									<div class="mx-1 col-sm-8">
+									<div class="mx-1 col-sm-8"">
 									<div class="progress w-100" >
 					                  <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $prog ?>%">
 					                    <span class="sr-only"><?php echo $prog ?>%</span>
@@ -108,6 +107,9 @@ while($row=$answers->fetch_assoc()){
 						</div>	
 					</div>
 					<?php endwhile; ?>
+					<?php else: // 설문 응답자가 없는 경우 ?>
+						<p class="text-center">응답된 답변이 없습니다.</p>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -123,7 +125,7 @@ while($row=$answers->fetch_assoc()){
 			data:$(this).serialize(),
 			success:function(resp){
 				if(resp == 1){
-					alert_toast("감사합니다.",'success')
+					alert_toast("Thank You.",'success')
 					setTimeout(function(){
 						location.href = 'index.php?page=survey_widget'
 					},2000)

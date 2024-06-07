@@ -167,7 +167,7 @@ Class Action {
 					}
 					$arr[$k] = $v;
 				}
-			$data .= ", frm_option='".json_encode($arr)."' ";
+			$data .= ", frm_option='".json_encode($arr, JSON_UNESCAPED_UNICODE)."' ";
 			}else{
 			$data .= ", frm_option='' ";
 			}

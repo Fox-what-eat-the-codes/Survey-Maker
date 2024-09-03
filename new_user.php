@@ -12,8 +12,17 @@
 							<input type="text" name="firstname" class="form-control form-control-sm" required value="<?php echo isset($firstname) ? $firstname : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">이름</labe	l>
+							<label for="" class="control-label">이름</label>
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label">학년</label>
+							<select name="class" id="class" class="custom-select custom-select-sm">
+								<option value="1학년" <?php echo isset($class) && $class == "1학년" ? 'selected' : '' ?>>1학년</option>
+								<option value="2학년" <?php echo isset($class) && $class == "2학년" ? 'selected' : '' ?>>2학년</option>
+								<option value="3학년" <?php echo isset($class) && $class == "3학년" ? 'selected' : '' ?>>3학년</option>
+								<option value="4학년" <?php echo isset($class) && $class == "4학년" ? 'selected' : '' ?>>4학년</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">전화번호</label>

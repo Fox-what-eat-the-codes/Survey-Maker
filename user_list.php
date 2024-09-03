@@ -11,6 +11,7 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
+						<th>학년</th>
 						<th>이름</th>
 						<th>연락처</th>
 						<th>역할</th>
@@ -27,6 +28,7 @@
 					?>
 					<tr>
 						<th class="text-center"><?php echo $i++ ?></th>
+						<td><b><?php echo $row['class'] ?></b></td>
 						<td><b><?php echo ucwords($row['name']) ?></b></td>
 						<td><b><?php echo $row['contact'] ?></b></td>
 						<td><b><?php echo $type[$row['type']] ?></b></td>

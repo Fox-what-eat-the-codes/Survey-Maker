@@ -1,0 +1,22 @@
+.hashtag-item {
+    display: inline-block;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: default;
+}
+
+.hashtag-item:hover .remove-hashtag {
+    display: inline;
+}
+
+.remove-hashtag {
+    display: none;
+    color: red;
+    margin-left: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -17,11 +17,24 @@
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">학년</label>
-							<select name="class" id="class" class="custom-select custom-select-sm">
+							<select name="grade" id="grade" class="custom-select custom-select-sm">
 								<option value="1학년" <?php echo isset($class) && $class == "1학년" ? 'selected' : '' ?>>1학년</option>
 								<option value="2학년" <?php echo isset($class) && $class == "2학년" ? 'selected' : '' ?>>2학년</option>
 								<option value="3학년" <?php echo isset($class) && $class == "3학년" ? 'selected' : '' ?>>3학년</option>
 								<option value="4학년" <?php echo isset($class) && $class == "4학년" ? 'selected' : '' ?>>4학년</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label">학과</label>
+							<select name="department" id="department" class="custom-select custom-select-sm">
+								<option value="컴퓨터소프트웨어학과" 
+								<?php echo isset($department) && $department == "컴퓨터소프트웨어학과" ? 'selected' : '' ?>>컴퓨터소프트웨어학과</option>
+								<option value="컴퓨터전자과" 
+								<?php echo isset($department) && $department == "컴퓨터전자과" ? 'selected' : '' ?>>컴퓨터전자과</option>
+								<option value="바이오학과" 
+								<?php echo isset($department) && $department == "바이오학과" ? 'selected' : '' ?>>바이오학과</option>
+								<option value="게임디자인과" 
+								<?php echo isset($department) && $department == "게임디자인과" ? 'selected' : '' ?>>게임디자인과</option>
 							</select>
 						</div>
 						<div class="form-group">

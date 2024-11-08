@@ -110,7 +110,8 @@ CREATE TABLE `users` (
   `id` int(30) NOT NULL,
   `firstname` varchar(200) NOT NULL,
   `lastname` varchar(200) NOT NULL,
-  `class` varchar(20) NOT NULL,
+  `grade` varchar(20) NOT NULL,
+  `department` varchar(20) NOT NULL,
   `contact` varchar(100) NOT NULL,
   `address` text NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -123,11 +124,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`,`class`,`contact`, `address`, `email`, `password`, `type`, `date_created`) VALUES
-(1, 'Admin', '', '1학년','+123456789', 'Sample address', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2020-11-10 08:43:06'),
-(2, 'John','D', '2학년','8747808787', 'Sample Address', 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 3, '2020-11-10 09:16:53'),
-(3, 'Claire', 'D','3학년', '+6948 8542 623', 'Sample Address', 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', 3, '2020-11-10 15:59:11'),
-(4, 'Mike', 'G','1학년','8747808787', 'Sample', 'mwilliams@sample.com', '3cc93e9a6741d8b40460457139cf8ced', 3, '2020-11-10 16:21:02');
+INSERT INTO `users` (`id`, `firstname`, `lastname`,`grade`, `department`,`contact`, `address`, `email`, `password`, `type`, `date_created`) VALUES
+(1, 'Admin', '', '1학년','컴퓨터소프트웨어과','+123456789', 'Sample address', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 1, '2020-11-10 08:43:06'),
+(2, 'John','D', '2학년','게임디자인과','8747808787', 'Sample Address', 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 3, '2020-11-10 09:16:53'),
+(3, 'Claire', 'D','3학년','컴퓨터전자과', '+6948 8542 623', 'Sample Address', 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', 3, '2020-11-10 15:59:11'),
+(4, 'Mike', 'G','1학년','바이오학과','8747808787', 'Sample', 'mwilliams@sample.com', '3cc93e9a6741d8b40460457139cf8ced', 3, '2020-11-10 16:21:02');
 
 --
 -- Indexes for dumped tables
@@ -189,3 +190,14 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/* 해시태그 추가 */;
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    survey_id INT,
+    message VARCHAR(255),
+    is_read BOOLEAN DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

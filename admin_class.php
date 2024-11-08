@@ -126,23 +126,53 @@ Class Action {
 		extract($_POST);
 		$data = "";
 		foreach($_POST as $k => $v){
-			if(!in_array($k, array('id')) && !is_numeric($k)){
+			if(!in_array($k, array('id', 'hashtags')) && !is_numeric($k)){
 				if(empty($data)){
 					$data .= " $k='$v' ";
-				}else{
+				} else {
 					$data .= ", $k='$v' ";
 				}
 			}
 		}
+		
+		// 설문 저장 또는 업데이트
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO survey_set set $data");
-		}else{
+			$survey_id = $this->db->insert_id; // 새로 생성된 설문 ID
+		} else {
 			$save = $this->db->query("UPDATE survey_set set $data where id = $id");
+			$survey_id = $id;
 		}
-
-		if($save)
-			return 1;
+	
+		if ($save) {
+			// 해시태그 관련 알림 처리
+			if (!empty($_POST['hashtags'])) {
+				$hashtags = explode(',', $_POST['hashtags']);
+				foreach ($hashtags as $tag) {
+					$tag = trim($tag);
+					
+					if (strpos($tag, '학년') !== false) {
+						// 예: #3학년
+						$grade = str_replace('#', '', $tag);
+						$users = $this->db->query("SELECT id FROM users WHERE grade='$grade'");
+					} elseif (strpos($tag, '과') !== false) {
+						// 예: #컴퓨터공학과
+						$department = str_replace('#', '', $tag);
+						$users = $this->db->query("SELECT id FROM users WHERE department='$department'");
+					}
+	
+					// 해당하는 사용자들에게 알림 추가
+					while ($user = $users->fetch_assoc()) {
+						$this->db->query("INSERT INTO notifications (user_id, survey_id, message) VALUES ('{$user['id']}', '$survey_id', '새로운 설문이 등록되었습니다.')");
+					}
+				}
+			}
+			
+			return 1; // 성공적인 경우 1 반환
+		}
+		return 0; // 실패한 경우 0 반환
 	}
+	
 	function delete_survey(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM survey_set where id = ".$id);

@@ -35,4 +35,8 @@
   <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
  <!-- summernote -->
   <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+  <!-- 해시태그 -->
+  <link rel="stylesheet" href="assets/plugins/hashtag/hashtag.css">
+  <script src="assets/plugins/hashtag/hashtag.js"></script>
+  <script src="assets/plugins/hashtag/filter-survey.js"></script>
 </head>

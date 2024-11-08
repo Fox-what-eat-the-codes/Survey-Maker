@@ -28,6 +28,12 @@ if(!isset($conn)){
 							<label class="control-label">설명</label>
 							<textarea name="description" id="" cols="30" rows="4" class="form-control" required><?php echo isset($description) ? $description : '' ?></textarea>
 						</div>
+						<div class="form-group">
+							<label for="" class="control-label">해시태그</label>
+							<input type="text" id="hashtag-input" class="form-control form-control-sm" placeholder="예: 3학년, 컴퓨터공학과">
+							<div id="hashtag-container" class="mt-2"></div>
+							<input type="hidden" name="hashtags" id="hashtags">
+						</div>
 					</div>
 				</div>
 				<hr>
